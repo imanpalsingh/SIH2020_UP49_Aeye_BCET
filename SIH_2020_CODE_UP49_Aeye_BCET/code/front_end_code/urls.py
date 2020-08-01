@@ -19,6 +19,7 @@ from front_end_main_app import views
 from django.urls import path
 
 urlpatterns = [
+    url(r'^$',views.index,name='index'),
     url(r'^input_form',views.patientForm,name='input_form'),
     path('admin/', admin.site.urls),
 ]

@@ -3,6 +3,9 @@ from . forms import Patient_input_form
 
 # Create your views here.
 
+def index(request):
+    return render(request,'index.html')
+
 
 def patientForm(request):
     form=Patient_input_form()
