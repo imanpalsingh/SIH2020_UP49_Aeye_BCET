@@ -227,3 +227,41 @@
 }
 
 
+
+.wrapper {
+  margin-bottom: 19px; }
+
+
+  .login-card-img {
+    border-radius: 0;
+    position: absolute;
+
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+  .login-card-description {
+    font-size: 25px;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 23px; }
+
+
+.mybt
+{
+    background-image: linear-gradient(to right,rgb(19, 19, 131), rgb(64, 64, 224));
+    color:white;
+    width:150px;
+    font-size: 20px;
+    margin:20px;
+
+
+    padding:2%;
+    border-radius: 20px;
+
+}
+.mybt:hover
+{
+box-shadow: 1px 4px 10px rgb(19, 19, 131);
+}
+

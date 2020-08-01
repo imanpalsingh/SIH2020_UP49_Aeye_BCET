@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Early Sepsis Detection Challenge {% endblock %}
+
+{% block content %}
+
+ <div class="blog-slider">
+     <div class="row">
+          <div class="col-md-6">
+              <img src="/static/img/logind.png" alt="login-image" class="login-card-img"></div>
+          <div class="col-md-6">
+              <div class="card-body">
+                  <div class="wrapper">
+                      <h4><a href="{% url 'index' %}"> Back to HomePage</a></h4>
+                  </div>
+                   <p class="login-card-description">Sign into your account</p>
+
+                  <form method="post" action="{% url 'login' %}">
+                      {% csrf_token %}
+                      <div class="col-sm-6 col-sm-6 ">
+                      {{ form.as_p }}
+                      <input type="submit" value="Sign-in"  class="mybt"/>
+                      </div>
+                  </form>
+              </div>
+          </div>
+     </div>
+ </div>
+
+
+
+
+{% endblock %}
