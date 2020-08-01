@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Early Sepsis Detection Challenge {% endblock %}
+
+{% block content %}
+<!--   write ur code here-->
+<!--   with comments and nice indents-->
+<div class="blog-slider">
+        <div class="brand-wrapper">
+            <a href="http://127.0.0.1:8000/check">BACK </a>
+                </div>
+              <p class="login-card-description">
+                  Results from ML Program Running at Backend<br>
+              </p>
+        <br>
+                <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th scope="col"><h4>Name of the Patient</h4> </th>
+                    <th scope="col"><h4>ID of the Patient</h4></th>
+                    <th scope="col"><h4>Date and Time</h4></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><h4>{{pt_name}}</h4></td>
+                    <td><h4>{{pt_id}}</h4></td>
+                    <td><h4>{{created_at}}</h4></td>
+                </tr>
+                </tbody>
+            </table>
+<br><br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col"><h4>Output of backend is :</h4></th>
+                        <th scope="col"><h4> {{output}}</h4></th>
+                    </tr>
+                    </thead>
+                </table>
+
+        <br><br><br>
+        <p class="login-card-description">
+                 Recent Predictions<br>
+              </p>
+        <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col"><h5>Name of the Patient</h5> </th>
+                    <th scope="col"><h5>ID of the Patient</h5></th>
+                       <th scope="col"><h5>Output</h5></th>
+                       <th scope="col"><h5>Date and Time</h5></th>
+                  </tr>
+                </thead>
+                <tbody>
+                 {% for i in db %}
+                  <tr>
+                      <td><h5>{{i.pt_id}}</h5></td>
+                    <td><h5>{{i.pt_name}}</h5></td>
+                       <td><h5>{{i.pt_output}}</h5></td>
+                       <td><h5>{{i.created_at}}</h5></td>
+                      </tr>
+                 {% endfor %}
+                </tbody>
+              </table>
+
+            </div>
+
+{% endblock %}

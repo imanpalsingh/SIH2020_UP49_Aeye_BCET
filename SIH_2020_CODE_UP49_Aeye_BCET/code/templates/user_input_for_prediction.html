@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="blog-slider">
+    <div class="card-body">
+        <div class="brand-wrapper">
+            <h2><p class="login-card-description">Input the data and predict the result</p> </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post">
+                    {% csrf_token%}
+                    <div class="col-sm-6 col-sm-6">
+                        {{form.as_p}}
+                        <input type="submit" value="Check" class="mybt" >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
