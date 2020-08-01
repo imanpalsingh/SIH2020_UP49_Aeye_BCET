@@ -42,3 +42,5 @@ class Patient_input_form(forms.Form):
     Gender = forms.CharField(label="Gender", max_length=100, required=False)
     HospAdmTime = forms.CharField(label="HospAdmTime", max_length=100, required=False)
     ICULOS = forms.CharField(label="ICULOS", max_length=100, required=False)
+    UNIT1 = forms.CharField(label="UNIT1", max_length=100, required=False)
+    UNIT2 = forms.CharField(label="UNIT2", max_length=100, required=False)
