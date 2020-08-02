@@ -30,11 +30,11 @@ class Forecast:
             predictions = model.predict(self.patientData)
             
             predict = [x[0] for x in predictions]
-            predictions2 = [1 if x > 0.5 else 0 for x in predict]
+            predictions2 = [1 if x >= 0.5 else 0 for x in predict]
            
             df2 = {"PredictedProbability":predict, "PredictedLabel" : predictions2}
             df2 = pd.DataFrame(df2)
-            df2.to_csv('Backend/NewFolder/' +file.strip("/Backend/Data/Datasets/TestSet_Day1") ,sep='|',index=False)
+            df2.to_csv('Backend/NewFolder/' +file.strip("/Backend/Data/Datasets/day2/") ,sep='|',index=False)
 
     
     def _hourly(self,patientData):
@@ -57,7 +57,7 @@ if __name__ == '__main__':
         print("Loading Trained Model . . ")
         model.load_weights("Backend/Model/saved/")
 
-        obj  = Forecast("Backend/Data/Datasets/TestSet_Day1/")
+        obj  = Forecast("Backend/Data/Datasets/day2/")
 
         
 

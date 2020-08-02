@@ -22,7 +22,7 @@ def loadData(filepath):
  
 def scale(X,Xval = None,Xtest = None):
 
-    with open("Backend/parameters.json",'r') as file:
+    with open("Backend/settings/parameters.json",'r') as file:
                 params = json.load(file)
         
     if Xval is None or Xtest is None:
@@ -49,7 +49,7 @@ def scale(X,Xval = None,Xtest = None):
 
         parameters = {'mean' : mean.tolist(), 'std' : std.tolist()}
 
-        with open("Backend/parameters.json",'w',encoding='utf-8') as file:
+        with open("Backend/settings/parameters.json",'w',encoding='utf-8') as file:
                 params.update(parameters)
                 json.dump(params,file,indent=4)
         
@@ -84,7 +84,7 @@ def generateData(X_,y_ = None):
 
     else : 
         
-        with open("Backend/parameters.json",'r') as file:
+        with open("Backend/settings/parameters.json",'r') as file:
             params = json.load(file)
 
         totalSize = len(X_)

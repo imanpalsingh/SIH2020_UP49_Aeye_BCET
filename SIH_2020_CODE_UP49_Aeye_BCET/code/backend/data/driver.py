@@ -42,7 +42,7 @@ def preprocess(df : pd.core.frame.DataFrame, trainingData : bool = True) -> None
 
 if __name__ == "__main__":
     
-    loadData('Backend/Data/Datasets/Raw/') 
+    #loadData('Backend/Data/Datasets/Raw/') 
     df = pd.read_csv("Backend/Data/Datasets/combinedData.csv")
     preprocess(df)
 
