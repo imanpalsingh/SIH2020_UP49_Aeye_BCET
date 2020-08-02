@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^information/', TemplateView.as_view(template_name='information.html'), name='Information_page'),
     url(r'^what_is_sepsis', TemplateView.as_view(template_name='what_is_sepsis.html'),
         name='Information_page_what_is_sepsis'),
-    url(r'^how_can_i_get_ahead_of_sepsis', TemplateView.as_view(template_name='get_ahead_from_sepsis.html'),
+    url(r'^how_can_i_get_ahead_of_sepsis', TemplateView.as_view(template_name='get_ahead_from _sepsis.html'),
         name='Information_page_get_ahead_of_sepsis'),
     url(r'^sepsis_diagnosed_and_treatment', TemplateView.as_view(template_name='sepsis_treatment.html'),
         name='Information_page_sepsis_treatment'),
