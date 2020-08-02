@@ -265,3 +265,125 @@
 box-shadow: 1px 4px 10px rgb(19, 19, 131);
 }
 
+
+.blog-slider2{
+width: 95%;
+    position: relative;
+    max-width: 1300px;
+    margin: auto;
+    top:800px;
+    background: #fff;
+    box-shadow: 5px 10px 1px rgb(43, 15, 145), 5px 10px 20px rgb(38, 8, 87);
+    padding: 4%;
+    border-radius: 25px;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+
+  .section__padding {
+        padding-top: 100px;
+        padding-bottom: 200px;
+      }
+      .section_title h3 {
+        font-size: 55px;
+        font-weight: 400;
+
+        color: white;
+      }
+
+      @media (max-width: 767px) {
+
+        .section_title h3 {
+          font-size: 30px;
+        }
+      }
+
+
+      .section_title P {
+        font-size: 18px;
+        line-height: 2;
+        color: #f7f8fc;
+        margin-bottom: 0;
+      }
+
+      .service_area {
+        padding-top: 85px;
+        padding-bottom: 50px;
+
+      }
+      .gray_bg {
+        background: #f8fafe;
+      }
+      .service_area .single_service {
+       box-shadow: 1px 4px 10px rgb(19, 19, 131);
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        padding: 27.5px 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        background: #fff;
+
+
+      }
+      .single_service ,a{
+          text-decoration: none;
+      }
+      .service_area .single_service .service_info p {
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 400;
+        color: black;
+        line-height: 1;
+      }
+      .service_area .single_service .service_info h4 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        color: black;
+        font-size: 25px;
+        margin-bottom: 7px;
+      }
+
+
+      .service_area .single_service .service_info p {
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 400;
+
+        line-height: 1;
+      }
+
+
+
+.loaction3 {
+    position: absolute;
+    top: 70px;
+
+
+}
+.content{
+
+
+    width: 100%;
+    top: 100px;
+    position: relative;
+
+}
+.content .sample-text-area {
+    background: #fff;
+    padding: 10px 0 70px 0;
+
+
+
+
+  }
+
+  .content .sample-text-area .text-heading {
+    margin-bottom: 30px;
+    font-size: 40px;
+
+  }
+
+
+
