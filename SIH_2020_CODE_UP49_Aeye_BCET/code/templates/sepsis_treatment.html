@@ -1,10 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Early Sepsis Detection Challenge {% endblock %}
 
-</body>
-</html>
+{% block content %}
+<div class="blog-slider">
+<!-- main area start-->
+<div class="container">
+    <div class="loaction3" ><a href="http://127.0.0.1:8000/information/"> INFORMATION ABOUT SEPSIS </a>
+        /<a href="http://127.0.0.1:8000/sepsis_diagnosed_and_treatment">How is sepsis diagnosed and treated?</a>
+        <br><br>
+        <div class="content"> <div class="whole-wrap">
+            <div class="container box_1170">
+            <div class="section-top-border">
+				<h3 class="mb-30">Diagnosis</h3><br>
+				<div class="row">
+					<div class="col-md-2">
+						<img src="/static/img/51.jpg" alt="image" class="img-fluid">
+					</div>
+					<div class="col-md-10 mt-sm-20">
+                        <p>Doctors diagnose sepsis using a number of physical findings such as:<br>
+
+
+                            1.Fever<br>
+                           2. Low blood pressure<br>
+                            3.Increased heart rate<br>
+                            4.Difficulty breathing<br><br>
+
+                        Doctors also perform lab tests that check for signs of infection or organ damage.
+                        <br>
+                        <br>
+
+                        Many of the signs and symptoms of sepsis, such as fever and difficulty breathing, are the same as
+                        in other conditions, making sepsis hard to diagnose in its early stages..</p>
+					</div>
+				</div>
+			</div>
+        </div></div>
+        <div class="container box_1170">
+            <div class="section-top-border">
+				<h3 class="mb-30">Treatment</h3><br>
+				<div class="row">
+					<div class="col-md-2">
+						<img src="/static/img//56.jpg" alt="image" class="img-fluid">
+					</div>
+					<div class="col-md-10 mt-sm-20">
+                        <p>Research shows that rapid, effective sepsis treatment includes::<br>1.Giving antibiotics<br>
+    2.Maintaining blood flow to organs<br>
+    3.Treating the source of the infection<br><br>Doctors and nurses treat sepsis with antibiotics as soon as possible. <br>
+    Many patients receive oxygen and intravenous (IV) fluids to maintain blood flow and oxygen to organs. Other types of treatment,
+    such as kidney dialysis or assisted breathing with a machine, might be necessary.<br>
+     Sometimes surgery is required to remove tissue damaged by the infection.</p>
+					</div>
+				</div>
+			</div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+{% endblock %}
