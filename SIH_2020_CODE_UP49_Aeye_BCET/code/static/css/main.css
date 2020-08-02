@@ -267,14 +267,23 @@ box-shadow: 1px 4px 10px rgb(19, 19, 131);
 
 
 .location4{
-
-    position: relative;
-   top:1300px;
-
+position: relative;
+margin: auto;
+top:172px;
+radius: 25px;
+font-size: 20px;
+line-height: 150%;
+}
+.location5{
+position: relative;
+margin: auto;
+top:172px;
+radius: 25px;
+font-size: 20px;
+line-height: 150%;
 }
 
-
-  .section__padding {
+ .section__padding {
         padding-top: 100px;
         padding-bottom: 200px;
       }
@@ -382,9 +391,9 @@ box-shadow: 1px 4px 10px rgb(19, 19, 131);
 .quizlocation{
 width: 95%;
     position: relative;
-    max-width: 1300px;
+    max-width: 700px;
     margin: auto;
-    top:700px;
+    top:250px;
     background: #f8fafe;
     padding: 2%;
     border-radius: 25px;
@@ -392,35 +401,35 @@ width: 95%;
     line-height: 150%;
 }
 .question{
-box-shadow: 5px 10px 1px rgb(43, 15, 145), 5px 10px 20px rgb(38, 8, 87);
+box-shadow: 5px 1px 1px rgb(43, 15, 145);
 	font-weight: 700;
-	padding:20px;
+	padding:15px;
 
 }
 .answers {
   margin-bottom: 50px;
-padding:50px;
+padding:20px;
   width:1000px;
 }
 .answers label{
   display: block;
   background:white-smoke;
-  padding:20px;
+  padding:15px;
 }
 .answers label:hover{
 background:white;}
 #submit{
 	font-family: sans-serif;
-	font-size: 20px;
+	font-size: 15px;
 	background-color:rgb(43, 15, 145);
 	color: #fff;
 	border: 0px;
-	border-radius: 3px;
-	padding: 20px;
+	border-radius: 10px;
+	padding: 8px;
 	cursor: pointer;
-	margin-bottom: 20px;
+	width:150px;
 }
 #submit:hover{
-	background-color: #38a;
+	background-color:blue;
 }
 
