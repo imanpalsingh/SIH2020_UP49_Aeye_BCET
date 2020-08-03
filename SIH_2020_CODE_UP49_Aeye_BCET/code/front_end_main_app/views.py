@@ -42,8 +42,8 @@ def result(request):
     # connection.close()
     temp = dbms1(pt_id=Id, pt_name=Name, pt_output=output, created_at=datetime.datetime.now())
     temp.save()
-     
-    context = { 'output': output, 'pt_name': Name, 'pt_id': Id, 'created_at': datetime.datetime.now()}
+    db = dbms1.objects.all()
+    context = { 'db': db ,'output': output, 'pt_name': Name, 'pt_id': Id, 'created_at': datetime.datetime.now()}
     return render(request, 'result.html', context)
 
 
