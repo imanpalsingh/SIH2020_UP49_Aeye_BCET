@@ -12,6 +12,7 @@ from typing import Union
 
 from backend.data.creator import Generator
 from backend.model.model import create
+import tensorflow as tf
 
 
 def loadData(filepath):
@@ -65,8 +66,9 @@ def createModel(X,y,Xval,yval,Xtest,ytest,saveModel = True):
     class_weights = compute_class_weight('balanced',classes = [0,1],y = y)
     class_weights = { index : class_weights[index] for index in range(len(class_weights))}
     
+    callback = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=3)
     model = create(maskValue = -10.0)
-    history = model.fit(X,y,validation_data=(Xval,yval),epochs=1,class_weight=class_weights,batch_size=50)
+    history = model.fit(X,y,validation_data=(Xval,yval),epochs=50,class_weight=class_weights,batch_size=64,callbacks=[callback])
 
     
     if saveModel:

@@ -26,7 +26,7 @@ urlpatterns = [
     path('accounts/',include('django.contrib.auth.urls')),
     url(r'^input_form',views.patientForm,name='input_form'),
     url(r'^result', views.result),
-    url(r'^status',views.status()),
+    url(r'^status',views.status),
     url(r'^information/', TemplateView.as_view(template_name='information.html'), name='Information_page'),
     url(r'^what_is_sepsis', TemplateView.as_view(template_name='what_is_sepsis.html'),
         name='Information_page_what_is_sepsis'),
