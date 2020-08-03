@@ -29,6 +29,7 @@ def preprocess(df : pd.core.frame.DataFrame, trainingData : bool = True) -> None
     sep = preprocessor.FeatureEngineering(sep.dataset)
     sep.addSofa()
     sep.addShockIndex()
+    sep.dataset.fillna(0,inplace=True)
     
     
    
@@ -37,7 +38,7 @@ def preprocess(df : pd.core.frame.DataFrame, trainingData : bool = True) -> None
         sep.save('Backend//Data//Datasets//Tensor.npz')
 
     else:
-        return np.array(sep.dataset),sep.columns[1:]   
+        return np.array(sep.dataset)
        
 
 if __name__ == "__main__":

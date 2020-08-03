@@ -34,7 +34,7 @@ class Common:
     
     def impute(self) -> None :
         
-        self.dataset.fillna(self.dataset.mode(),inplace=True)
+        self.dataset.fillna(0,inplace=True)
             
     
     

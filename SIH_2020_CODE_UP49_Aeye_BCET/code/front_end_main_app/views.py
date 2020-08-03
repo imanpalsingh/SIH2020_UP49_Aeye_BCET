@@ -3,6 +3,7 @@ from . forms import Patient_input_form
 import datetime
 from front_end_main_app.models import dbms1
 from django.core import mail
+from backend.interface.main import Forecast
 
 
 # Create your views here.
@@ -28,18 +29,20 @@ def result(request):
 
     # Converting the values that are as a string to lists
     convertStringToList(patientData)
-    output="output"
-    # if output > 0.5:
-    #   connection = mail.get_connection()
-    #  connection.open()
-    # email = mail.EmailMessage(
-    #    'Sepsis Detected !',
-    #   'Patient : ' + Name + '\nPatient Id : ' + Id + '\nSepsis Result : Positive',
-    #  'nandan980633@gmail.com',
-    # ['imanpalsingh@gmail.com'],
-    # )
-    # connection.send_messages([email])
-    # connection.close()
+    output=Forecast(patientData).get()
+
+    if 1 in output:
+        connection = mail.get_connection()
+        connection.open()
+        email = mail.EmailMessage(
+        'Sepsis Detected !',
+       'Patient : ' + Name + '\nPatient Id : ' + Id + '\nSepsis Result : Positive',
+      'nandan980633@gmail.com',
+     ['imanpalsingh@gmail.com'],
+     )
+    connection.send_messages([email])
+    connection.close()
+    
     temp = dbms1(pt_id=Id, pt_name=Name, pt_output=output, created_at=datetime.datetime.now())
     temp.save()
     db = dbms1.objects.all()

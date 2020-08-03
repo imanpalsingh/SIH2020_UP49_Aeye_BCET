@@ -27,9 +27,12 @@ def scale(X,Xval = None,Xtest = None):
         
     if Xval is None or Xtest is None:
         
-        mean,std = params['mean'],params['std']
+        X = np.array(X)
+        mean,std = np.array(params['mean']),np.array(params['std'])
+        
         X = np.array([x - mean for x in X])
         X = np.array([x/std for x in X])
+        
         return X
 
     else:
