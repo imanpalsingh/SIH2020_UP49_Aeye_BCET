@@ -96,12 +96,11 @@ class Forecast:
 
 
 
-if __name__ == '__main__':
+if __name__ != '__main__':
 
         model = create(-10.0)
         print("Loading Trained Model . . ")
         model.load_weights("Backend/Model/saved/")
-        Forecast("backend/interface/test_data/")
 
         
 

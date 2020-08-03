@@ -1,74 +1,145 @@
 {% extends 'base.html' %}
 {% block title %}Early Sepsis Detection Challenge {% endblock %}
-
 {% block content %}
-
     <div class="blog-slider">
         <div class="brand-wrapper">
             <a href="http://127.0.0.1:8000/input_form">BACK </a>
                 </div>
               <p class="login-card-description">
-                  Results from ML Program Running at Backend<br>
+                  Data of Patient with  Patient_id <br>
               </p>
         <br>
-                <table class="table table-borderless">
-                <thead>
-                <tr>
-                    <th scope="col"><h4>Name of the Patient</h4> </th>
-                    <th scope="col"><h4>ID of the Patient</h4></th>
-                    <th scope="col"><h4>Date and Time</h4></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><h4>{{pt_name}}</h4></td>
-                    <td><h4>{{pt_id}}</h4></td>
-                    <td><h4>{{created_at}}</h4></td>
-                </tr>
-                </tbody>
-            </table>
-<br><br>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th scope="col"><h4>Output of backend is :</h4></th>
-                        <th scope="col"><h4> {% for i in output %}
-                            <tr>
-                       <td><h5>prediction for hour {{ forloop.counter }}  :<span style="display: inline-block; margin-left: 80px;"></span> {{i}}</h5></td>
-                     </tr>
-                {% endfor %}
-                       </h4></th>
-                    </tr>
-                    </thead>
-                </table>
-
-        <br><br><br>
         <p class="login-card-description">
-                 Recent Predictions<br>
+                 <br>
               </p>
         <table class="table table-striped">
+            {% for i in pt_values %}
                 <thead>
                   <tr>
-                    <th scope="col"><h5>Name of the Patient</h5> </th>
-                    <th scope="col"><h5>ID of the Patient</h5></th>
-                       <th scope="col"><h5>Output</h5></th>
-                       <th scope="col"><h5>Date and Time</h5></th>
+                    <th scope="col"><h3>Patient_id</h3> </th>
+                    <th scope="col"><h3>{{i.Patient_id}}</h3></th>
                   </tr>
                 </thead>
                 <tbody>
-                 {% for i in db %}
-                  <tr>
-                      <td><h5>{{i.pt_name}}</h5></td>
-                    <td><h5>{{i.pt_id}}</h5></td>
-                       <td><h5>{{i.pt_output}}</h5></td>
-                       <td><h5>{{i.created_at}}</h5></td>
+                <tr>
+                      <td><h3>HR</h3></td>
+                    <td><h3>{{i.HR }}</h3></td>
+                      </tr>
+                <tr>
+                      <td><h3>O2Sat</h3></td>
+                    <td><h3>{{i.O2Sat}}</h3></td>
+                      </tr>
+                 <tr>
+                      <td><h3>Temp</h3></td>
+                    <td><h3>{{i.Temp}}</h3></td>
+                      </tr>
+                 <tr>
+                      <td><h3>SBP</h3></td>
+                    <td><h3>{{i.SBP}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>MAP </h3></td>
+                    <td><h3>{{i.MAP }}</h3></td>
+                      </tr> <tr>
+                      <td><h3>DBP</h3></td>
+                    <td><h3>{{i.DBP}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Resp</h3></td>
+                    <td><h3>{{i.Resp}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>EtCO2</h3></td>
+                    <td><h3>{{i.EtCO2}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>BaseExcess</h3></td>
+                    <td><h3>{{i.BaseExcess}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>HCO3</h3></td>
+                    <td><h3>{{i.HCO3}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>  FiO2</h3></td>
+                    <td><h3>{{i.FiO2}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>pH</h3></td>
+                    <td><h3>{{i.pH}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>PaCO2</h3></td>
+                    <td><h3>{{i.PaCO2}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>SaO2</h3></td>
+                    <td><h3>{{i.SaO2}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>AST</h3></td>
+                    <td><h3>{{i.AST}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>BUN</h3></td>
+                    <td><h3>{{i.BUN}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Alkalinephos</h3></td>
+                    <td><h3>{{i.Alkalinephos}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Calcium</h3></td>
+                    <td><h3>{{i.Calcium}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Chloride</h3></td>
+                    <td><h3>{{i.Chloride}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Creatinine</h3></td>
+                    <td><h3>{{i.Creatinine}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Bilirubin_direct </h3></td>
+                    <td><h3>{{i.Glucose}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Lactate</h3></td>
+                    <td><h3>{{i.Lactate}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Magnesium</h3></td>
+                    <td><h3>{{i.Magnesium}}</h3></td>
+                      </tr> <tr>
+                      <td><h3> Phosphate</h3></td>
+                    <td><h3>{{i.Phosphate}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Potassium</h3></td>
+                    <td><h3>{{i.Potassium}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>Bilirubin_total</h3></td>
+                    <td><h3>{{i.Bilirubin_total}}</h3></td>
+                      </tr> <tr>
+                      <td><h3>TroponinI</h3></td>
+                    <td><h3>{{i.TroponinI}}</h3></td>
+                      </tr>
+                <tr>
+                      <td><h3>Hct</h3></td>
+                    <td><h3>{{i.Hct}}</h3></td>
+                      </tr><tr>
+                      <td><h3>Hgb</h3></td>
+                    <td><h3>{{i.Hgb}}</h3></td>
+                      </tr><tr>
+                      <td><h3>PTT</h3></td>
+                    <td><h3>{{i.PTT}}</h3></td>
+                      </tr><tr>
+                      <td><h3>WBC</h3></td>
+                    <td><h3>{{i.WBC}}</h3></td>
+                      </tr><tr>
+                      <td><h3>Fibrinogen</h3></td>
+                    <td><h3>{{i.Fibrinogen}}</h3></td>
+                      </tr><tr>
+                      <td><h3> Platelets</h3></td>
+                    <td><h3>{{i.Platelets}}</h3></td>
+                      </tr><tr>
+                      <td><h3>Age</h3></td>
+                    <td><h3>{{i.Age}}</h3></td>
+                      </tr><tr>
+                      <td><h3> Gender</h3></td>
+                    <td><h3>{{i.Gender}}</h3></td>
+                      </tr><tr>
+                      <td><h3>HosAdmTime</h3></td>
+                    <td><h3>{{i.HosAdmTime}}</h3></td>
+                      </tr><tr>
+                      <td><h3>ICULOS</h3></td>
+                    <td><h3>{{i.ICULOS}}</h3></td>
                       </tr>
                  {% endfor %}
                 </tbody>
               </table>
-
             </div>
-
-
-
+            
 {% endblock %}

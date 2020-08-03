@@ -4,8 +4,8 @@ import datetime
 from front_end_main_app.models import pt_data
 from django.core import mail
 from backend.interface.main import Forecast
-from backend.interface.asyncro import Listen
 import json
+import numpy as np
 
 
 # Create your views here.
@@ -40,35 +40,27 @@ def status(request):
 
 
 
-def result(request):
-    if request.method == "POST":
-        user_input_values = request.POST.copy()
-    patientData = user_input_values.dict()
-    # Deleting the metdata in the dictionary as it is not required
-    del patientData['csrfmiddlewaretoken']
+def  result(request):
+    if request.method=="POST":
+        pk=request.POST.copy()
+    
+    pt_values=pt_data.objects.values()
+    patientData = pt_values[0]
 
-    Name = patientData.pop('Patient_name')
+
     Id = patientData.pop('Patient_id')
 
-    # Converting the values that are as a string to lists
-    convertStringToList(patientData)
-    output=Forecast(patientData).get()
 
-    if 1 in output:
-        connection = mail.get_connection()
-        connection.open()
-        email = mail.EmailMessage(
-        'Sepsis Detected !',
-       'Patient : ' + Name + '\nPatient Id : ' + Id + '\nSepsis Result : Positive',
-      'nandan980633@gmail.com',
-     ['imanpalsingh@gmail.com'],
-     )
-        connection.send_messages([email])
-        connection.close()
+    convertStringToList(patientData)
+
+    obj = Forecast(patientData)
+    output = obj.get()
+
+
     
-   
-    context = {'output': output, 'pt_name': Name, 'pt_id': Id, 'created_at': datetime.datetime.now()}
-    return render(request, 'result.html', context)
+    context={'pt_values':pt_values ,'output':output}
+
+    return render(request,'result.html',context)
 
 
 def convertStringToList(dictionary):
@@ -95,11 +87,22 @@ def convertStringToList(dictionary):
 
     will be converted to required format as
 
-    `{ 'HR' : [1,2,3,4] , 'SBP' : [1,2,3,4] }`
+    `{ 'HR' : [1,2,3,4] , '
+    SBP' : [1,2,3,4] }`
 
     '''
     for key in dictionary.keys():
-        values = [float(val) for val in dictionary[key].split(',')]
+        
+        values = []
+        for val in dictionary[key].split(','):
+
+            if val == 'None':
+                continue
+               
+
+            elif val != ' None':
+                values.append(float(val))
+
         dictionary[key] = values
 
 
