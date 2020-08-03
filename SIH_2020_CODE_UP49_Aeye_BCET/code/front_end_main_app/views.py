@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from . forms import Patient_input_form
 import datetime
-from models import dbms1
+from front_end_main_app.models import dbms1
 from django.core import mail
 
 
@@ -42,9 +42,9 @@ def result(request):
     # connection.close()
     temp = dbms1(pt_id=Id, pt_name=Name, pt_output=output, created_at=datetime.datetime.now())
     temp.save()
-    db=dbms1.objects.get.all()
-    context = {'db': db, 'output': output, 'pt_name': Name, 'pt_id': Id, 'created_at': datetime.datetime.now()}
-    return render(request, 'result_ml.html', context)
+     
+    context = { 'output': output, 'pt_name': Name, 'pt_id': Id, 'created_at': datetime.datetime.now()}
+    return render(request, 'result.html', context)
 
 
 def convertStringToList(dictionary):
