@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from . forms import Patient_input_form
 import datetime
-from front_end_main_app.models import dbms1
+from front_end_main_app.models import pt_data
 from django.core import mail
 from backend.interface.main import Forecast
 from backend.interface.asyncro import Listen
@@ -66,10 +66,8 @@ def result(request):
         connection.send_messages([email])
         connection.close()
     
-    temp = dbms1(pt_id=Id, pt_name=Name, pt_output=output, created_at=datetime.datetime.now())
-    temp.save()
-    db = dbms1.objects.all()
-    context = { 'db': db ,'output': output, 'pt_name': Name, 'pt_id': Id, 'created_at': datetime.datetime.now()}
+   
+    context = {'output': output, 'pt_name': Name, 'pt_id': Id, 'created_at': datetime.datetime.now()}
     return render(request, 'result.html', context)
 
 

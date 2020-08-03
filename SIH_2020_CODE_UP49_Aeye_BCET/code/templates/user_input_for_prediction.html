@@ -5,7 +5,7 @@
 <div class="blog-slider">
     <div class="card-body">
         <div class="brand-wrapper">
-            <h2><p class="login-card-description">Input the data and predict the result</p> </h2>
+            <h2><p class="login-card-description">Enter Patient Id to access the data</p> </h2>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -13,7 +13,7 @@
                     {% csrf_token%}
                     <div class="col-sm-6 col-sm-6">
                         {{form.as_p}}
-                        <input type="submit" value="Check" class="mybt" >
+                        <input type="submit" value="Load" class="mybt" >
                     </div>
                 </form>
             </div>

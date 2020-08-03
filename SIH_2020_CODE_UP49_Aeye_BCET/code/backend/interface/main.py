@@ -14,7 +14,7 @@ import glob
 
 class Forecast:
 
-    def __init__(self, patientData,asynchro = False,to_json=False):
+    def __init__(self, patientData,asynchro = False):
 
         
 
@@ -25,24 +25,21 @@ class Forecast:
                 df['Id'] = 1
                 prob,labels = self.compute(df)
 
-                if to_json:
-
-                    patientname = str(patientData.replace("backend/interface/test_data\\",""))
-                    patientname = str(patientname.replace(".psv",""))
+                patientname = str(patientData.replace("backend/interface/test_data\\",""))
+                
+                new_params = { ""+patientname : labels }
+                with open("Backend/interface/test_result/result.json",'r',encoding='utf-8') as file:
                     
-                    new_params = { ""+patientname : labels }
-                    with open("Backend/interface/test_result/result.json",'r',encoding='utf-8') as file:
-                        
-                        params = json.load(file)
+                    params = json.load(file)
 
-                    with open("Backend/interface/test_result/result.json",'w',encoding='utf-8') as file:
-                        params.update(new_params)
-                        json.dump(params,file,indent=2)
+                with open("Backend/interface/test_result/result.json",'w',encoding='utf-8') as file:
+                    params.update(new_params)
+                    json.dump(params,file,indent=2)
 
-                    print("saved")
-                else:
+                print("saved")
+            
 
-                    self.save(patientData,prob,labels)
+                self.save(patientData,prob,labels)
                     
                     
 
@@ -83,7 +80,6 @@ class Forecast:
         patientData = modelDriver.generateData(data)
         predictions = model.predict(patientData)
         predict = [x[0] for x in predictions]
-        print(predict)
         predictions2 = [1 if x > 0.5 else 0 for x in predict]
 
         return predict, predictions2
@@ -100,12 +96,12 @@ class Forecast:
 
 
 
-if __name__ != '__main__':
+if __name__ == '__main__':
 
         model = create(-10.0)
         print("Loading Trained Model . . ")
         model.load_weights("Backend/Model/saved/")
-        print("Done")
+        Forecast("backend/interface/test_data/")
 
         
 

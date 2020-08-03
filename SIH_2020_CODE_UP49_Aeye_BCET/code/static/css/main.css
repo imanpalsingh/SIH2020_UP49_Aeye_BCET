@@ -249,21 +249,17 @@
 
 .mybt
 {
-    background-image: linear-gradient(to right,rgb(19, 19, 131), rgb(64, 64, 224));
-    color:white;
+    background-color: white;
+    border-color: rgb(19, 19, 131);
+    color: Balck;
     width:150px;
     font-size: 20px;
     margin:20px;
-
-
     padding:2%;
     border-radius: 20px;
 
 }
-.mybt:hover
-{
-box-shadow: 1px 4px 10px rgb(19, 19, 131);
-}
+
 
 
 .location4{
