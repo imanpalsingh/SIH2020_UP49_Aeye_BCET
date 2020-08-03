@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 {% block title %}Early Sepsis Detection Challenge {% endblock %}
 {% block content %}
-<div class="location5 container">
-
-
-    write here
-
+<div class="blog-slider">
+        <div class="brand-wrapper">
+            <p class="login-card-description">
+                  Results from ML Program Running at Backend<br>
+            </p></div>
+    <br>
+    <br>
+     <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col"><h4>Output of backend is :</h4></th>
+                        <th scope="col"><h4> {% for patient,output in params.items %}</h4>
+                             <tr>
+                        <td><h3>Patient Name :  {{ patient }} </h3></td>
+                        <th scope="col"><h4> {% for i in output %}
+                            <tr>
+                       <td><h5>prediction for hour {{ forloop.counter }}  :<span style="display: inline-block; margin-left: 80px;"></span> {{i}}</h5></td>
+                     </tr>
+                {% endfor %}
+                       </h4></th>
+                    </tr>
+                               {% endfor %}
+                    </thead>
+                </table>
 </div>
-
 {% endblock %}

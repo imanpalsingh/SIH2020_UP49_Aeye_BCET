@@ -29,6 +29,7 @@ class Forecast:
 
                     patientname = str(patientData.replace("backend/interface/test_data\\",""))
                     patientname = str(patientname.replace(".psv",""))
+                    
                     new_params = { ""+patientname : labels }
                     with open("Backend/interface/test_result/result.json",'r',encoding='utf-8') as file:
                         
