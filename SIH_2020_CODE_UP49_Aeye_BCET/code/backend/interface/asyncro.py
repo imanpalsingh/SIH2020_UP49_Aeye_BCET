@@ -11,7 +11,7 @@ class Listen:
 
         time.sleep(2)
         print("Making predictions ..")
-        Forecast(event.src_path,asynchro=True,to_json=self.to_json)
+        Forecast(event.src_path,asynchro=True,to_json=to_json)
         time.sleep(3)
         self.created = True
 
@@ -21,13 +21,12 @@ class Listen:
         if not self.created:
 
             time.sleep(2)
-            print("Making predictions ..")
-            Forecast(event.src_path,asynchro=True,to_json=self.to_json)
-            time.sleep(3)
+            print("Making changed predictions ..")
+            print(Forecast(event.src_path,True).get())
         
         self.created = False
 
-    def __init__(self,path,to_json = False):
+    def __init__(self,path,to_json  = False):
 
         self.to_json = to_json
         self.created = False
@@ -55,4 +54,4 @@ class Listen:
 
 if __name__ =="__main__":
 
-    obj = Listen("backend/interface/test_data")
+    obj = Listen("backend/interface/test_data",to_json=True)

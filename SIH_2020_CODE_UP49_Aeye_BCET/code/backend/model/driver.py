@@ -68,7 +68,7 @@ def createModel(X,y,Xval,yval,Xtest,ytest,saveModel = True):
     
     callback = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=3)
     model = create(maskValue = -10.0)
-    history = model.fit(X,y,validation_data=(Xval,yval),epochs=50,class_weight=class_weights,batch_size=64,callbacks=[callback])
+    history = model.fit(X,y,validation_data=(Xval,yval),epochs=50,class_weight=class_weights,batch_size=32,callbacks=[callback])
 
     
     if saveModel:

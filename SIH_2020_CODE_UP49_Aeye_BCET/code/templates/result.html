@@ -32,7 +32,12 @@
                     <thead>
                     <tr>
                         <th scope="col"><h4>Output of backend is :</h4></th>
-                        <th scope="col"><h4> {{output}}</h4></th>
+                        <th scope="col"><h4> {% for i in output %}
+                            <tr>
+                       <td><h5>prediction for hour {{ forloop.counter }}  :<span style="display: inline-block; margin-left: 80px;"></span> {{i}}</h5></td>
+                     </tr>
+                {% endfor %}
+                       </h4></th>
                     </tr>
                     </thead>
                 </table>

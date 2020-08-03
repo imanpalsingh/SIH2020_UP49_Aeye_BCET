@@ -21,21 +21,16 @@ def patientForm(request):
 
 def status(request):
 
-    # This line weh executed will start observing the test_data folder if a new psv file is inserted in the folder 
-    Listen("backend/interface/test_data",to_json=True) 
 
     # If new file is created, a new json file will be created in backend/interface/test_result
     # read the json file from here
-    with open("Backend/interface/test_result.json",'r') as file:
+    with open("Backend/settings/parameters.json",'r') as file:
             params = json.load(file)
     
     # params is the dictionary which has structure as follows
     '''
     {
-    "patientfile": [1,1,1,1,1,1,1,1,]
-    }
-
-    # render this dictionary
+    "p100008.psv": [1,1,1,1,1,1,1,1,]
 
 
     '''
