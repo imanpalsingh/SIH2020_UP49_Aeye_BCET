@@ -40,8 +40,8 @@ def result(request):
       'nandan980633@gmail.com',
      ['imanpalsingh@gmail.com'],
      )
-    connection.send_messages([email])
-    connection.close()
+        connection.send_messages([email])
+        connection.close()
     
     temp = dbms1(pt_id=Id, pt_name=Name, pt_output=output, created_at=datetime.datetime.now())
     temp.save()
