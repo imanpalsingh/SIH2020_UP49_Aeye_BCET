@@ -3,15 +3,32 @@
 {% block content %}
     <div class="blog-slider">
         <div class="brand-wrapper">
-            <a href="http://127.0.0.1:8000/input_form">BACK </a>
                 </div>
               <p class="login-card-description">
                   Data of Patient with  Patient_id <br>
               </p>
         <br>
-        <p class="login-card-description">
-                 <br>
-              </p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+     aria-controls="collapseExample">
+    <h4>Check the Results</h4>
+  </a>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+      <p class="output"><h3> Result is <br><table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col"><h4> {% for i in output %}
+                 <tr>
+            <td><h5>prediction for hour {{ forloop.counter }}  :<span style="display: inline-block; margin-left: 80px;"></span> {{i}}</h5></td>
+          </tr>
+     {% endfor %}
+            </h4></th>
+        </tr>
+        </thead>
+    </table></h3></p>
+  </div>
+</div>
+        <br><br>
         <table class="table table-striped">
             {% for i in pt_values %}
                 <thead>
@@ -141,5 +158,4 @@
                 </tbody>
               </table>
             </div>
-            
 {% endblock %}
