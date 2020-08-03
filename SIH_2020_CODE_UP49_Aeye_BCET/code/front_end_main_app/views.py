@@ -17,6 +17,10 @@ def patientForm(request):
     return render(request,'user_input_for_prediction.html',{'form': form })
 
 
+def status(request):
+    return render(request,'status.html')
+
+
 def result(request):
     if request.method == "POST":
         user_input_values = request.POST.copy()
